@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        applicationId "ch.uepaa.quickstart"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 8
+        versionName "2.0.3"
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+        }
+    }
+
+    productFlavors {
+        dev {
+            buildConfigField 'String', "BUILD_CONFIGURATION", '"dev"'
+        }
+        prod {
+            buildConfigField 'String', "BUILD_CONFIGURATION", '"prod"'
+        }
+    }
+}
+
+dependencies {
+    // android
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    // libs
+    compile 'com.larswerkman:HoloColorPicker:1.5'
+    // p2pkit
+    compile 'ch.uepaa.p2p:p2pkit-android:2.+'
+}
